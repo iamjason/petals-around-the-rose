@@ -20,7 +20,7 @@ let values = Process.arguments.dropFirst().flatMap { (string) -> [Int] in
 }
 
 print("\nCalculating: \(values)\n")
-var solution = values
+let solution = values
     .filter { (number) in (number - 1) % 2 == 0 }
     .reduce(0) { (total, number) in total + (number - 1) }
 
