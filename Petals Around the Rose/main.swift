@@ -8,18 +8,17 @@
 
 import Foundation
 
-print("Petals Around the Rose இڿڰۣ-ڰۣ—")
 // grab the arguments and make sure they are 
 // all positive integers that make sense for a die (1-6)
 let values = Process.arguments.dropFirst().flatMap { (string) -> [Int] in
     if let validInt = Int(string) where validInt >= 1 && validInt <= 6 {
         return [validInt]
     }
-    print("\nPlease valid die roll (1-6).\n\nThe problematic parameter is: '\(string)'\n")
+    print("\nPlease use a valid die roll value (1-6).\n\nThe problematic parameter is: '\(string)'\n")
     exit(-1)
 }
 
-print("\nCalculating: \(values)\n")
+print("Petals Around the Rose இڿڰۣ-ڰۣ— Calculating: \(values)\n")
 let solution = values
     .filter { (number) in (number - 1) % 2 == 0 }
     .reduce(0) { (total, number) in total + (number - 1) }
